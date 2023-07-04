@@ -1,0 +1,21 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: Project-Common-Service
+          uri: lb://PROJECT-COMMON-SERVICE
+          predicates:
+            - Path=/project-common/**
+          filters:
+            - name: AuthenticationFilter
+
+  application:
+    name: Project-Gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+server:
+  port: 8080
