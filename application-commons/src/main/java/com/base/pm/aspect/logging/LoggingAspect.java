@@ -1,4 +1,4 @@
-package com.base.pm.logging;
+package com.base.pm.aspect.logging;
 
 import com.base.pm.base.aspect.BaseAspect;
 import com.base.pm.base.dto.logging.LogDTO;
@@ -24,7 +24,7 @@ import java.sql.Timestamp;
 @Order(Ordered.LOWEST_PRECEDENCE)
 public class LoggingAspect extends BaseAspect {
 
-    @Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) && !@annotation(SkipLogging)")
+    @Around("@annotation(org.springframework.web.bind.annotation.RequestMapping) && !@annotation(com.base.pm.aspect.logging.SkipLogging)")
     public Object logRequestMapping(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("inside LoggingAspect - logRequestMapping");
 

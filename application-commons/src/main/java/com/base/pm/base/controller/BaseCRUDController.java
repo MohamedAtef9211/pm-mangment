@@ -1,7 +1,7 @@
 package com.base.pm.base.controller;
 
 import com.base.pm.base.dto.model.BaseDTO;
-import com.base.pm.logging.SkipLogging;
+import com.base.pm.aspect.logging.SkipLogging;
 import com.base.pm.base.service.model.BaseCRUDService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

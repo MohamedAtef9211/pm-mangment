@@ -1,7 +1,10 @@
 package com.base.pm.base.aspect;
 
+import com.base.pm.aspect.security.PublicEndPoint;
 import com.base.pm.base.dto.logging.LogDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -28,6 +31,10 @@ public class BaseAspect {
     protected void log(LogDTO logDTO) {
         // Perform the logging operation here
         System.out.println(logDTO.toString()); // Example: Printing the log entry to the console
+    }
+
+    protected boolean isPublicEndPoint(ProceedingJoinPoint joinPoint){
+        return ((MethodSignature) joinPoint.getSignature()).getMethod().isAnnotationPresent(PublicEndPoint.class);
     }
 
 }

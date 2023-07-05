@@ -1,21 +1,12 @@
-package com.base.pm.security;
+package com.base.pm.aspect.security;
 
 import com.base.pm.base.aspect.BaseAspect;
-import com.base.pm.security.validator.ValidateRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Component
 @Aspect
@@ -27,6 +18,9 @@ public class FilterAspect extends BaseAspect {
     public Object authorizeRequest(ProceedingJoinPoint joinPoint ) throws Throwable {
         log.info("Inside FilterAspect");
         addRequestId();
+        if(isPublicEndPoint(joinPoint)){
+            log.info("Inside FilterAspect -- Public");
+        }
         return joinPoint.proceed();
     }
 }

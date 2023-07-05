@@ -32,11 +32,12 @@ server:
 togglz:
     features:
         GET_PROJECT:
-            enabled: false
+            enabled: true
     console:
-        secured: false
         enabled: true
+        secured: false
         path: /togglz-console
+        use-management-port: false
 management:
     endpoints:
         web:

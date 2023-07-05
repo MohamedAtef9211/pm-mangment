@@ -1,6 +1,4 @@
-package com.base.pm.security;
-
-import com.base.pm.security.validator.ValidateRequest;
+package com.base.pm.aspect.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,7 +7,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-public @interface AuthorizedEndPoint {
-
-   Class<? extends ValidateRequest>[] value();
+public @interface SkipLogging {
 }

@@ -1,4 +1,4 @@
-package com.base.pm.security.validator;
+package com.base.pm.aspect.security.validator;
 
 public abstract class ValidateRequest {
 
