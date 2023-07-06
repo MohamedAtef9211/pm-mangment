@@ -20,7 +20,7 @@ public class FeatureAspect {
         if (FeatureContext.getFeatureManager().isActive(new EnumFeatureWrapper(featureToggle.value()))) {
             return pjp.proceed();
         } else {
-            throw new RuntimeException("This feature was not enabled for this instance " + featureToggle.value());
+            throw new RuntimeException("This feature is currently disabled");
         }
     }
 }

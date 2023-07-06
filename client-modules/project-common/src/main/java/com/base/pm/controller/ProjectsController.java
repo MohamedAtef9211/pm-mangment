@@ -36,4 +36,9 @@ public class ProjectsController extends BaseCRUDController<ProjectsDTO> {
     public ResponseEntity<List<ProjectsDTO>> getAll() {
             return responseOk(service.findAll());
     }
+    @RequestMapping(path = {"/l"},
+            method = {RequestMethod.GET})
+    public ResponseEntity get() {
+        return responseOk(service.findAll());
+    }
 }

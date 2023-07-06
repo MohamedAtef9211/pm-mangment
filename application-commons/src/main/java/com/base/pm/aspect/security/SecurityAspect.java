@@ -1,7 +1,7 @@
 package com.base.pm.aspect.security;
 
-import com.base.pm.base.aspect.BaseAspect;
 import com.base.pm.aspect.security.validator.ValidateRequest;
+import com.base.pm.base.aspect.BaseAspect;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,10 +10,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.Order;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.util.MimeType;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -54,15 +51,8 @@ public class SecurityAspect extends BaseAspect {
             }
         });
         if(errorList.size() > 0){
-            //throw new RuntimeException("User Not Authorized");
-            return new ResponseEntity<>(errorList.get(0), HttpStatus.BAD_REQUEST);
+            throw new RuntimeException("User Not Authorized");
         }
-        return joinPoint.proceed();
-    }
-
-    // Public
-    @Around("@annotation(com.base.pm.aspect.security.PublicEndPoint) && !@annotation(com.base.pm.aspect.security.AuthorizedEndPoint)")
-    public Object publicRequest(ProceedingJoinPoint joinPoint) throws Throwable {
         return joinPoint.proceed();
     }
 }
