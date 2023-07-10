@@ -1,6 +1,6 @@
 package com.base.pm.services;
 
-import com.base.pm.base.service.model.BaseCRUDService;
+import com.base.pm.common.client.base.jpa.service.model.BaseCRUDService;
 import com.base.pm.dto.ProjectsDTO;
 import com.base.pm.dto.mapper.ProjectsMapper;
 import com.base.pm.model.entity.ProjectsEntity;

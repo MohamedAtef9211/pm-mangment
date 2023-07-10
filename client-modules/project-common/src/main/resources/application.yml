@@ -1,12 +1,25 @@
 application:
     title: Project-Common-Service
     version: Version 1
-
 eureka:
     client:
         service-url:
-            defaultZone : http://localhost:8761/eureka/
+            defaultZone: http://localhost:8761/eureka/
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+server:
+    port: 8070
+    servlet:
+        context-path: /project-common
 spring:
+    application:
+        name: Project-Common-Service
     datasource:
         driver:
             class-name: oracle.jdbc.OracleDriver
@@ -20,26 +33,12 @@ spring:
         database-platform: org.hibernate.dialect.Oracle10gDialect
         hibernate:
             ddl-auto: update
-    application:
-        name: Project-Common-Service
-
-server:
-    servlet:
-        context-path: /project-common
-    port: 8070
-
-
 togglz:
+    console:
+        enabled: true
+        path: /togglz-console
+        secured: false
+        use-management-port: false
     features:
         GET_PROJECT:
             enabled: true
-    console:
-        enabled: true
-        secured: false
-        path: /togglz-console
-        use-management-port: false
-management:
-    endpoints:
-        web:
-            exposure:
-                include: 'togglz'

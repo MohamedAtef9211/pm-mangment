@@ -1,9 +1,7 @@
 package com.base.pm.model.entity;
 
-import com.base.pm.base.jpa.entity.AuditEntity;
-import lombok.AllArgsConstructor;
+import com.base.pm.common.client.base.jpa.entity.AuditEntity;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

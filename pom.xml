@@ -18,7 +18,8 @@
 		<module>client-modules</module>
 		<module>application-commons</module>
 		<module>cloud-modules</module>
-	</modules>
+        <module>client-modules/notification-module</module>
+    </modules>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.7</spring-cloud.version>

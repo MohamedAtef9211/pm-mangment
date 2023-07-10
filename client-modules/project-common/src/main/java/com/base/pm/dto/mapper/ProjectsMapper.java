@@ -1,6 +1,6 @@
 package com.base.pm.dto.mapper;
 
-import com.base.pm.base.mapper.BaseMapper;
+import com.base.pm.common.client.base.jpa.mapper.BaseMapper;
 import com.base.pm.dto.ProjectsDTO;
 import com.base.pm.model.entity.ProjectsEntity;
 import org.mapstruct.Mapper;
