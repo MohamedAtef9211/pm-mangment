@@ -3,7 +3,7 @@
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
- @RestController
+@RestController
 @RequestMapping("/feature-togglz")
 @RequiredArgsConstructor
 public class FeatureController {
