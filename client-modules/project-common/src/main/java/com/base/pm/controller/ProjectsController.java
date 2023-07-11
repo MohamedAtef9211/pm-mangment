@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.base.pm.common.client.aspect.feature.MyFeature.GET_PROJECT;
+import static com.base.pm.common.client.feature.MyFeature.GET_PROJECT;
 
 @RestController
 @RequestMapping("/projects")

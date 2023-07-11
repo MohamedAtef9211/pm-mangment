@@ -1,4 +1,4 @@
-package com.base.pm.common.client.aspect.feature;
+package com.base.pm.common.client.feature;
 
 import org.togglz.core.annotation.Label;
 
